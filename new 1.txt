@@ -1,0 +1,41 @@
+<table border=5px style="margin-left:0%; margin-top:10%;">
+<tr>
+    <th>NAME</th>
+    <th>PLACE</th>
+    <th>PHONE</th>
+	<th>EMAIL</th>
+	<th>GENDER</th>
+	<th>DOB</th>
+	<th>PASSWORD</th>
+	<th>PHOTO</th>
+	<th>ADHAAR</th>
+	<th>RESUME</th>
+	<th>TOW</th>
+  </tr>
+<?php
+//$id=$_GET["Reg_id"];
+//echo "$id"; 
+$sql="SELECT * FROM `employee registration` WHERE Status=0";
+$result=mysqli_query($db,$sql);
+//$i=0;
+while($row=mysqli_fetch_array($result))
+{
+  ?>
+	<tr>
+    <td><?php echo $row['NAME'] ?></td>
+    <td><?php echo $row['PLACE'] ?></td>
+	<td><?php echo $row['PHONE'] ?></td>
+	<td><?php echo $row['EMAIL'] ?></td>
+	<td><?php echo $row['GENDER'] ?></td>
+	<td><?php echo $row['DOB'] ?></td>
+	<td><?php echo $row['PASSWORD'] ?></td>
+   <td rowspan="2"><?php echo $row['PHOTO'] ?></td>
+   <td rowspan="2"><?php echo $row['ADHAAR'] ?></td>
+   <td rowspan="2"><?php echo $row['RESUME'] ?></td>
+   <td><?php echo $row['TOW'] ?></td>
+  </tr>
+  
+	
+	<?php 
+
+}?></table>
